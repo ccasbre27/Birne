@@ -6,12 +6,18 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
+using Xamarin.Forms;
+using Birne.MobileApp.Core.Interface;
+using Android.Speech;
 
 namespace Birne.MobileApp.Droid
 {
     [Activity(Label = "Birne.MobileApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IMessageSender
     {
+        private readonly int VOICE = 10;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -28,6 +34,29 @@ namespace Birne.MobileApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+
+            if (requestCode == VOICE)
+            {
+                if (resultCode == Result.Ok)
+                {
+                    var matches = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+                    if (matches.Count != 0)
+                    {
+                        string textInput = matches[0];
+                        MessagingCenter.Send<IMessageSender, string>(this, "STT", textInput);
+                    }
+                    else
+                    {
+                        MessagingCenter.Send<IMessageSender, string>(this, "STT", "No input");
+                    }
+
+                }
+            }
+            base.OnActivityResult(requestCode, resultCode, data);
         }
     }
 }

@@ -1,27 +1,21 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Prism.Ioc;
+using Prism.Unity;
 
 namespace Birne.MobileApp
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public App()
         {
             InitializeComponent();
+        }
 
+        protected override void OnInitialized()
+        {
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
         }
     }

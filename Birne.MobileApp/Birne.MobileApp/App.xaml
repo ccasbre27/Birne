@@ -5,6 +5,7 @@
                         xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+                        xmlns:view="clr-namespace:Birne.MobileApp.View"
                         mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
@@ -22,11 +23,21 @@
                         Android="Roboto-Regular.ttf#Roboto-Regular"
                         iOS="Roboto-Regular.ttf" />
 
-            <Style x:Key="lblTitle"
+            <Style x:Key="styTitle"
                    TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource MainColor}" />
                 <Setter Property="FontFamily" Value="{d:StaticResource fnt-bold}" />
                 <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style x:Key="styCustomEntry"
+                   TargetType="view:CustomEntry">
+                <Setter Property="CBackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#D8D8D8" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="BorderWidth" Value="4" />
+                <Setter Property="IsCurvedCornersEnabled" Value="True" />
             </Style>
 
             <Style TargetType="NavigationPage">

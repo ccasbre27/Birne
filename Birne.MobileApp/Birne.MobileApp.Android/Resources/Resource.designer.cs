@@ -15,7 +15,7 @@ namespace Birne.MobileApp.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
 		
@@ -10686,10 +10686,10 @@ namespace Birne.MobileApp.Droid
 			public const int notification_bg_normal = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int search_icon = 2131165313;
+			public const int notification_bg_normal_pressed = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int tooltip_frame_dark = 2131165314;
+			public const int notification_icon_background = 2131165314;
 			
 			// aapt resource value: 0x7F070083
 			public const int notification_template_icon_bg = 2131165315;
@@ -10707,19 +10707,22 @@ namespace Birne.MobileApp.Droid
 			public const int plus = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int shop = 2131165320;
+			public const int search_icon = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int tooltip_frame_dark = 2131165321;
+			public const int shop = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int tooltip_frame_light = 2131165322;
+			public const int tooltip_frame_dark = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int truck = 2131165323;
+			public const int tooltip_frame_light = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int user_icon = 2131165324;
+			public const int truck = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int user_icon = 2131165325;
 			
 			static Drawable()
 			{

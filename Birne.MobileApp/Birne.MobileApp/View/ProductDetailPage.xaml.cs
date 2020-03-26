@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Birne.MobileApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProductDetail : ContentPage
+    public partial class ProductDetailPage : ContentPage
     {
-        public ProductDetail()
+        public ProductDetailPage()
         {
             InitializeComponent();
         }

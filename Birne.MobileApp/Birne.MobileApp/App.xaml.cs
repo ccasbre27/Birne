@@ -1,5 +1,8 @@
-﻿using Prism.Ioc;
+﻿using Birne.MobileApp.View;
+using Birne.MobileApp.ViewModel;
+using Prism.Ioc;
 using Prism.Unity;
+using Xamarin.Forms;
 
 namespace Birne.MobileApp
 {
@@ -7,16 +10,22 @@ namespace Birne.MobileApp
     {
         public App()
         {
-            InitializeComponent();
         }
 
         protected override void OnInitialized()
         {
-            MainPage = new MainPage();
+            InitializeComponent();
+
+            NavigationService.NavigateAsync($"HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<RegisterUserPage, RegisterUserViewModel>();
+            containerRegistry.RegisterForNavigation<MainPage>();
         }
     }
 }

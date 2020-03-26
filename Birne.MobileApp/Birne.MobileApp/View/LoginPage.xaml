@@ -11,12 +11,13 @@
                    Padding="0" >
                 <StackLayout Orientation="Horizontal" Padding="5">
                     <Image HeightRequest="80" Aspect="AspectFill" Source="facebook-logo.png" />
-                    <Label Text="Continue with Facebook" VerticalOptions="Center" FontSize="17" TextColor="White" />
+                    <Label Text="Continue with Facebook" VerticalOptions="Center"  FontSize="17" TextColor="White" />
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer x:Name="FacebookButton" AutomationId="FacebookButton" Command="{Binding FacebookButtonCommand}" />
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
             </Frame>
+            <Button Text="Registrarse" TextColor="White" BackgroundColor="#1EC9B2"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

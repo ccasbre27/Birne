@@ -2,6 +2,7 @@
 <ContentPage x:Class="Birne.MobileApp.View.HomeTabPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:Birne.MobileApp.View"
              ControlTemplate="{StaticResource ctm-base}">
     <ContentPage.Content>
         <StackLayout Spacing="20">
@@ -9,10 +10,12 @@
                    CornerRadius="25"
                    HeightRequest="150" />
 
-            <Label Style="{StaticResource lblTitle}"
+            <Label Style="{StaticResource styTitle}"
                    Text="Buscar tus productos" />
 
-            <SearchBar Placeholder="Search items..." />
+            <view:CustomEntry ImageAlignment="Right"
+                              ImageSource="search_icon.png"
+                              Style="{StaticResource styCustomEntry}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

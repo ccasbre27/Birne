@@ -10686,10 +10686,10 @@ namespace Birne.MobileApp.Droid
 			public const int notification_bg_normal = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int notification_bg_normal_pressed = 2131165313;
+			public const int search_icon = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int notification_icon_background = 2131165314;
+			public const int tooltip_frame_dark = 2131165314;
 			
 			// aapt resource value: 0x7F070083
 			public const int notification_template_icon_bg = 2131165315;

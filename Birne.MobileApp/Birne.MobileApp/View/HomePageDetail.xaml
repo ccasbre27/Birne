@@ -3,24 +3,11 @@
             xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:view="clr-namespace:Birne.MobileApp.View"
             android:TabbedPage.ToolbarPlacement="Bottom"
             BarBackgroundColor="{StaticResource MainColor}"
             SelectedTabColor="White">
-    <ContentPage ControlTemplate="{StaticResource ctm-base}"
-                 IconImageSource="home_icon.png">
-        <ContentPage.Content>
-            <StackLayout Spacing="20">
-                <Frame BackgroundColor="#D8D8D8"
-                       CornerRadius="25"
-                       HeightRequest="150" />
-
-                <Label Style="{StaticResource lblTitle}"
-                       Text="Buscar tus productos" />
-
-                <SearchBar Placeholder="Search items..." />
-            </StackLayout>
-        </ContentPage.Content>
-    </ContentPage>
+    <view:HomeTabPage IconImageSource="home_icon.png" />
     <ContentPage ControlTemplate="{StaticResource ctm-base}"
                  IconImageSource="buy_icon.png" />
 

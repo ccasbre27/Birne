@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Birne.MobileApp.View.LoginPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Birne.MobileApp.View.LoginPage"
+             BackgroundColor="White">
     <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
+            <Entry Placeholder="Nombe de usuario"></Entry>
+            <Entry Placeholder="Clave" IsPassword="True"></Entry>
+            <Button Text="Iniciar sesión" TextColor="White" BackgroundColor="#1EC9B2"></Button>
+            <Frame BackgroundColor="#4167b2" 
+                   HeightRequest="60" 
+                   Padding="0" >
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Image HeightRequest="80" Aspect="AspectFill" Source="facebook-logo.png" />
+                    <Label Text="Continue with Facebook" VerticalOptions="Center" FontSize="17" TextColor="White" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="FacebookButton" AutomationId="FacebookButton" Command="{Binding FacebookButtonCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

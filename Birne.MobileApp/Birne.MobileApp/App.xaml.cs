@@ -16,7 +16,8 @@ namespace Birne.MobileApp
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync($"HomePage");
+            MainPage = new HomePage();
+            //NavigationService.NavigateAsync($"HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

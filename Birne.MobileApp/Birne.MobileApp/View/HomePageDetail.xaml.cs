@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 namespace Birne.MobileApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePageDetail : ContentPage
+    public partial class HomePageDetail : TabbedPage
     {
         public HomePageDetail()
         {

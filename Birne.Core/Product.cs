@@ -10,6 +10,7 @@ namespace Birne.Core.Models
         public int price; // price is set by merchant
         public string status; //in or out of stock
         public string img_url;
+        public int quantity; // To do -> Eliminar
 
         public int product_id
         {
@@ -44,6 +45,12 @@ namespace Birne.Core.Models
         {
             get => img_url;
             set => RaiseAndSetIfChanged(ref img_url, value);
+        }
+
+        public int product_quantity
+        {
+            get => quantity;
+            set => RaiseAndSetIfChanged(ref quantity, value);
         }
 
     }

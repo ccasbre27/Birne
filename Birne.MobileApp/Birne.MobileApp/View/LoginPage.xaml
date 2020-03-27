@@ -1,23 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Birne.MobileApp.View.LoginPage"
-             BackgroundColor="White">
+             BackgroundColor="#2F2E41">
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
-            <Entry Placeholder="Nombe de usuario"></Entry>
-            <Entry Placeholder="Clave" IsPassword="True"></Entry>
-            <Button Text="Iniciar sesión" TextColor="White" BackgroundColor="#1EC9B2"></Button>
-            <Frame BackgroundColor="#4167b2" 
-                   HeightRequest="60" 
-                   Padding="0" >
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Image HeightRequest="80" Aspect="AspectFill" Source="facebook-logo.png" />
-                    <Label Text="Continue with Facebook" VerticalOptions="Center"  FontSize="17" TextColor="White" />
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="FacebookButton" AutomationId="FacebookButton" Command="{Binding FacebookButtonCommand}" />
-                    </StackLayout.GestureRecognizers>
-                </StackLayout>
-            </Frame>
-            <Button Text="Registrarse" TextColor="White" BackgroundColor="#1EC9B2"></Button>
+
+
+        <StackLayout Spacing="20" Padding="40" VerticalOptions="Center">
+            <Image Source="sin_intermediarios.png"
+                   HorizontalOptions="Center"
+                   WidthRequest="250"/>
+            <Entry Placeholder="Email" TextColor="White" PlaceholderColor="Gray" />
+            <Entry Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray" />
+            <Button Text="Login" TextColor="White" BackgroundColor="#1EC9B2"></Button>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Need and account?" TextColor="White" />
+                        <Span Text=" " TextColor="White" />
+                        <Span Text="Sign up" TextDecorations="Underline" TextColor="#1EC9B2" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Image Source="social_login.png" />
+
+    
         </StackLayout>
+
+
+
     </ContentPage.Content>
 </ContentPage>

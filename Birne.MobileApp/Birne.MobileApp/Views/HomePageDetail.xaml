@@ -7,10 +7,12 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             BarBackgroundColor="{StaticResource MainColor}"
             SelectedTabColor="White">
-    <view:HomeTabPage IconImageSource="home_icon.png" />
-    <view:CartPage IconImageSource="buy_icon.png" />
+    
+    <view:HomeTabPage IconImageSource="home.png" />
+    
+    <view:CartPage IconImageSource="buy.png" />
 
     <ContentPage ControlTemplate="{StaticResource ctm-base}"
-                 IconImageSource="user_icon.png" />
+                 IconImageSource="profile.png" />
 
 </TabbedPage>

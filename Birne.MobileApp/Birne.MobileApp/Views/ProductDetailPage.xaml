@@ -25,7 +25,7 @@
                        Aspect="AspectFit"
                        HeightRequest="28"
                        HorizontalOptions="End"
-                       Source="cart.png"
+                       Source="buybuy.png"
                        WidthRequest="28" />
 
                 <Image Grid.Row="1"
@@ -128,7 +128,7 @@
                 <Image Grid.Row="4"
                        Aspect="AspectFit"
                        HeightRequest="20"
-                       Source="cart.png"
+                       Source="buy.png"
                        WidthRequest="20" />
 
                 <Label Grid.Row="4"
@@ -140,7 +140,7 @@
                 <Image Grid.Row="5"
                        Aspect="AspectFit"
                        HeightRequest="20"
-                       Source="cart.png"
+                       Source="buy.png"
                        WidthRequest="20" />
 
                 <Label Grid.Row="5"

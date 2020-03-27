@@ -19,7 +19,7 @@ namespace Birne.MobileApp
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync($"LoginPage");
+            NavigationService.NavigateAsync($"HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

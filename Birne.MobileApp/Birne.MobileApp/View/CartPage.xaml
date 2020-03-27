@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Birne.MobileApp.ViewModel"
+             xmlns:local="clr-namespace:Birne.MobileApp.View"
+             mc:Ignorable="d"
+             x:Class="Birne.MobileApp.View.CartPage">
+    <ContentPage.BindingContext>
+        <viewModels:CartViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" 
+                   BackgroundColor="#2F2E41">
+                <Label Text="Carrito de Compras" 
+                       TextColor="White"
+                       HorizontalTextAlignment="Center" 
+                       FontSize="Title" 
+                       FontAttributes="Bold"/>
+            </Frame>
+
+            <Grid Grid.Row="1" 
+                  Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <ListView Grid.Row="0"
+                          ItemsSource="{Binding Products}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0"
+                           CornerRadius="30"
+                           BackgroundColor="#1EC9B2"
+                           VerticalOptions="Center">
+                                    <Label Text="2" 
+                               TextColor="White" />
+                                </Frame>
+                                <Image Grid.Column="1" 
+                           Source="aguacate.png"
+                           HeightRequest="60"
+                           WidthRequest="60" />
+                                <StackLayout Grid.Column="2"
+                                 Orientation="Vertical">
+                                    <Label Text="Aguacate Hass" />
+                                    <Label Text="100% Natural" />
+                                    <Label Text="¢3,300 (kilo)" />
+                                </StackLayout>
+
+                                <Label Grid.Column="3"
+                           Text="¢6,600"
+                           TextColor="#1EC9B2"
+                           VerticalOptions="Center"
+                           FontSize="Subtitle"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+                <Label Grid.Row="1"
+                       HorizontalTextAlignment="End"
+                       TextColor="#2F2E41">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Total: " />
+                            <Span Text="¢23,500" FontSize="Title" TextColor="#1EC9B2" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Frame Grid.Row="2"
+                   CornerRadius="25"
+                   BackgroundColor="#1EC9B2"
+                   HorizontalOptions="Center"
+                   WidthRequest="200">
+                    <Label Text="Ordenar" 
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+                </Frame>
+
+
+
+            </Grid>
+        </Grid>
+        
+       
+    </ContentPage.Content>
+</ContentPage>

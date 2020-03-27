@@ -16,8 +16,8 @@ namespace Birne.MobileApp
         {
             InitializeComponent();
 
-            MainPage = new ProductDetailPage();
-            //NavigationService.NavigateAsync($"HomePage");
+            MainPage = new MainPage();
+           // NavigationService.NavigateAsync($"NavigationPage/CartPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -26,6 +26,7 @@ namespace Birne.MobileApp
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
             containerRegistry.RegisterForNavigation<RegisterUserPage, RegisterUserViewModel>();
+            containerRegistry.RegisterForNavigation<CartPage, CartViewModel>();
             containerRegistry.RegisterForNavigation<MainPage>();
         }
     }

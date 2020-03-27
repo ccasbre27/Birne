@@ -12,9 +12,30 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Frame BackgroundColor="#D8D8D8"
+            <Frame BackgroundColor="#FFE99F"
                    CornerRadius="25"
-                   HeightRequest="150" />
+                   HeightRequest="150">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*" />
+                        <ColumnDefinition Width="60*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0"
+                           Grid.Column="0"
+                           HorizontalOptions="FillAndExpand"
+                           Source="banner_icon"
+                           VerticalOptions="FillAndExpand" />
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalOptions="FillAndExpand"
+                           Style="{StaticResource sty-header}"
+                           Text="¡Encuentra a tus productores favoritos en un par de clicks!"
+                           VerticalOptions="FillAndExpand" />
+                </Grid>
+            </Frame>
 
             <Label Style="{StaticResource sty-title}"
                    Text="Buscar tus productos" />

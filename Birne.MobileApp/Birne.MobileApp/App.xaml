@@ -30,6 +30,13 @@
                 <Setter Property="FontSize" Value="16" />
             </Style>
 
+            <Style x:Key="sty-header"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="#3f3d56" />
+                <Setter Property="FontFamily" Value="{d:StaticResource fnt-bold}" />
+                <Setter Property="FontSize" Value="21" />
+            </Style>
+
             <Style x:Key="sty-sutitle"
                    TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource MainColor}" />

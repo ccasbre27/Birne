@@ -15,7 +15,7 @@ namespace Birne.MobileApp.ViewModels
 
         private void Login()
         {
-            NavigationService.NavigateAsync($"HomePage");
+            NavigationService.NavigateAsync("/HomePage");
         }
     }
 }

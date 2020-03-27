@@ -19,6 +19,7 @@ namespace Birne.MobileApp
         {
             InitializeComponent();
 
+            //MainPage = new HomePage();
             NavigationService.NavigateAsync($"LoginPage");
         }
 

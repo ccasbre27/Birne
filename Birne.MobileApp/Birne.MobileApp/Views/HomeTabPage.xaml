@@ -9,6 +9,8 @@
              ControlTemplate="{StaticResource ctm-base}">
     <ContentPage.Resources>
         <view:DenyExpressionsConverter x:Key="cnvDenyExpressionsConverter" />
+        <view:HeigthConverter x:Key="cnvHeigthConverter" />
+        <view:ColorConverter x:Key="cnvColorConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="20">
@@ -71,6 +73,69 @@
                                      WidthRequest="15"
                                      Color="{StaticResource MainColor}" />
                         </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView Margin="-10,0"
+                            HeightRequest="{Binding Products, Converter={StaticResource cnvHeigthConverter}, ConverterParameter='230'}"
+                            ItemsSource="{Binding Products}"
+                            SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="10"
+                                     HeightRequest="210">
+                            <Frame BackgroundColor="{Binding Converter={StaticResource cnvColorConverter}}"
+                                   CornerRadius="25"
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand">
+
+                                <Grid HorizontalOptions="FillAndExpand"
+                                      RowSpacing="0"
+                                      VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0"
+                                           Grid.Column="0"
+                                           Margin="0,0,0,5"
+                                           HorizontalOptions="FillAndExpand"
+                                           Source="{Binding ImageURL}"
+                                           VerticalOptions="FillAndExpand" />
+
+                                    <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           Style="{StaticResource sty-sutitle}"
+                                           Text="{Binding Name}"
+                                           TextColor="#404040" />
+
+                                    <Label Grid.Row="2"
+                                           Grid.Column="0"
+                                           FontFamily="{StaticResource fnt-regular}"
+                                           Style="{StaticResource sty-sutitle}"
+                                           Text="{Binding Description}"
+                                           TextColor="#404040" />
+
+                                    <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           FontFamily="{StaticResource fnt-regular}"
+                                           Style="{StaticResource sty-sutitle}"
+                                           Text="{Binding Price}"
+                                           TextColor="#404040" />
+                                </Grid>
+                            </Frame>
+                        </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

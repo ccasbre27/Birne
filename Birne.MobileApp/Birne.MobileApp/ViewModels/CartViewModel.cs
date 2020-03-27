@@ -6,9 +6,9 @@ namespace Birne.MobileApp.ViewModels
 {
     public class CartViewModel : BaseViewModel
     {
-        private ObservableCollection<Product> _products;
+        private ObservableCollection<ProductModel> _products;
 
-        public ObservableCollection<Product> Products
+        public ObservableCollection<ProductModel> Products
         {
             get => _products;
             set => RaiseAndSetIfChanged(ref _products, value);
@@ -16,13 +16,13 @@ namespace Birne.MobileApp.ViewModels
 
         public CartViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Products = new ObservableCollection<Product>();
-            Products.Add(new Product());
-            Products.Add(new Product());
-            Products.Add(new Product());
-            Products.Add(new Product());
-            Products.Add(new Product());
-            Products.Add(new Product());
+            Products = new ObservableCollection<ProductModel>();
+            Products.Add(new ProductModel());
+            Products.Add(new ProductModel());
+            Products.Add(new ProductModel());
+            Products.Add(new ProductModel());
+            Products.Add(new ProductModel());
+            Products.Add(new ProductModel());
         }
     }
 }

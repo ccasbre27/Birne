@@ -22,12 +22,26 @@
                 </Label.FormattedText>
             </Label>
 
-            <Image Source="social_login.png" />
-
-    
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0" 
+                       BackgroundColor="#3B5998"
+                       CornerRadius="7">
+                    <Image Source="facebook.png" 
+                           VerticalOptions="Center"
+                           HeightRequest="20"/>
+                </Frame>
+                <Frame Grid.Column="1" 
+                       BackgroundColor="White"
+                       CornerRadius="7">
+                    <Image Source="google.png" 
+                           VerticalOptions="Center"
+                           HeightRequest="20"/>
+                </Frame>
+            </Grid>
         </StackLayout>
-
-
-
     </ContentPage.Content>
 </ContentPage>

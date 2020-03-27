@@ -11,6 +11,7 @@ namespace Birne.Core.Models
         private string _imageURL;
         private CategoryModel _category;
         private string _unit;
+        private int _quantity; //TODO delete, used by the moment in cart page 
 
         public int Id
         {
@@ -52,6 +53,12 @@ namespace Birne.Core.Models
         {
             get => _unit;
             set => RaiseAndSetIfChanged(ref _unit, value);
+        }
+        //TODO delete, used by the moment in cart page 
+        public int Quantity
+        {
+            get => _quantity;
+            set => RaiseAndSetIfChanged(ref _quantity, value);
         }
     }
 }

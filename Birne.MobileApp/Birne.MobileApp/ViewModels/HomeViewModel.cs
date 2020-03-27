@@ -1,8 +1,10 @@
-﻿namespace Birne.MobileApp.ViewModels
+﻿using Prism.Navigation;
+
+namespace Birne.MobileApp.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel : BaseViewModel
     {
-        public HomeViewModel()
+        public HomeViewModel(INavigationService navigationService) : base(navigationService)
         {
         }
     }

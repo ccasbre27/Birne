@@ -1,9 +1,11 @@
 ﻿using System;
+using Prism.Navigation;
+
 namespace Birne.MobileApp.ViewModels
 {
-    public class RegisterUserViewModel
+    public class RegisterUserViewModel : BaseViewModel
     {
-        public RegisterUserViewModel()
+        public RegisterUserViewModel(INavigationService navigationService) : base(navigationService)
         {
         }
     }

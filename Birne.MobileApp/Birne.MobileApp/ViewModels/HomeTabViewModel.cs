@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Birne.Core.Models;
+using Bogus;
 using Prism.Commands;
+using Prism.Navigation;
 
 namespace Birne.MobileApp.ViewModels
 {
@@ -14,9 +16,16 @@ namespace Birne.MobileApp.ViewModels
             set => RaiseAndSetIfChanged(ref _categories, value);
         }
 
+        private ObservableCollection<ProductModel> _products;
+        public ObservableCollection<ProductModel> Products
+        {
+            get => _products;
+            set => RaiseAndSetIfChanged(ref _products, value);
+        }
+
         public DelegateCommand<CategoryModel> SelectedCategoryCommand { get; private set; }
 
-        public HomeTabViewModel()
+        public HomeTabViewModel(INavigationService navigationService) : base(navigationService)
         {
             Categories = new ObservableCollection<CategoryModel>()
             {
@@ -24,6 +33,19 @@ namespace Birne.MobileApp.ViewModels
                 new CategoryModel() { Name = "LIMPIEZA"},
                 new CategoryModel() { Name = "FRUTAS Y VERDURAS"}
             };
+
+            var productIds = 0;
+            var productFake = new Faker<ProductModel>("es").StrictMode(true)
+                .RuleFor(u => u.Id, f => productIds++)
+                .RuleFor(u => u.Name, f => f.Commerce.Product())
+                .RuleFor(u => u.Description, (f, u) => u.Name)
+                .RuleFor(u => u.Price, f => f.Random.Number(100, 100000))
+                .RuleFor(u => u.Category, f => _categories[f.Random.Number(0, 2)])
+                .RuleFor(u => u.Unit, f => f.Commerce.ProductAdjective())
+                .RuleFor(u => u.ImageURL, f => f.Image.PicsumUrl());
+
+            Products = new ObservableCollection<ProductModel>(productFake.Generate(7));
+
             SelectedCategoryCommand = new DelegateCommand<CategoryModel>(SelectedCategory);
         }
 

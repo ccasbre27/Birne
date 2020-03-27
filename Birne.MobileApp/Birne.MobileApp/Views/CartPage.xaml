@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             ControlTemplate="{StaticResource ctm-base}"
              mc:Ignorable="d">
     <ContentPage.Content>
 
@@ -36,41 +37,42 @@
                           ItemsSource="{Binding Products}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Frame Grid.Column="0"
-                                       BackgroundColor="#1EC9B2"
-                                       CornerRadius="30"
-                                       VerticalOptions="Center">
-                                    <Label Text="2"
-                                           TextColor="White" />
-                                </Frame>
-                                <Image Grid.Column="1"
-                                       HeightRequest="60"
-                                       Source="aguacate.png"
-                                       WidthRequest="60" />
-                                <StackLayout Grid.Column="2"
-                                             Orientation="Vertical">
-                                    <Label Text="Aguacate Hass" />
-                                    <Label Text="100% Natural" />
-                                    <Label Text="¢3,300 (kilo)" />
-                                </StackLayout>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0"
+                                           BackgroundColor="#1EC9B2"
+                                           CornerRadius="30"
+                                           VerticalOptions="Center">
+                                        <Label Text="2"
+                                               TextColor="White" />
+                                    </Frame>
+                                    <Image Grid.Column="1"
+                                           HeightRequest="60"
+                                           Source="aguacate.png"
+                                           WidthRequest="60" />
+                                    <StackLayout Grid.Column="2"
+                                                 Orientation="Vertical">
+                                        <Label Text="Aguacate Hass" />
+                                        <Label Text="100% Natural" />
+                                        <Label Text="¢3,300 (kilo)" />
+                                    </StackLayout>
 
-                                <Label Grid.Column="3"
-                                       FontSize="Subtitle"
-                                       Text="¢6,600"
-                                       TextColor="#1EC9B2"
-                                       VerticalOptions="Center" />
-                            </Grid>
+                                    <Label Grid.Column="3"
+                                           FontSize="Subtitle"
+                                           Text="¢6,600"
+                                           TextColor="#1EC9B2"
+                                           VerticalOptions="Center" />
+                                </Grid>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
 
                 <Label Grid.Row="1"
                        HorizontalTextAlignment="End"

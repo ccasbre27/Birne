@@ -1,45 +1,61 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Birne.MobileApp.Views.LoginPage"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Birne.MobileApp.Views.LoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="#2F2E41">
     <ContentPage.Content>
 
 
-        <StackLayout Spacing="20" Padding="40" VerticalOptions="Center">
-            <Image Source="sin_intermediarios.png"
-                   HorizontalOptions="Center"
-                   WidthRequest="250"/>
-            <Entry Placeholder="Email" TextColor="White" PlaceholderColor="Gray" />
-            <Entry Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray" />
-            <Button Text="Login" TextColor="White" BackgroundColor="#1EC9B2"></Button>
+        <StackLayout Padding="40"
+                     Spacing="20"
+                     VerticalOptions="Center">
+            <Image HorizontalOptions="Center"
+                   Source="sin_intermediarios.png"
+                   WidthRequest="250" />
+            <Entry Placeholder="Email"
+                   PlaceholderColor="Gray"
+                   TextColor="White" />
+            <Entry IsPassword="True"
+                   Placeholder="Password"
+                   PlaceholderColor="Gray"
+                   TextColor="White" />
+            <Button BackgroundColor="#1EC9B2"
+                    Command="{Binding LoginCommand}"
+                    Text="Login"
+                    TextColor="White" />
 
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Need and account?" TextColor="White" />
-                        <Span Text=" " TextColor="White" />
-                        <Span Text="Sign up" TextDecorations="Underline" TextColor="#1EC9B2" />
+                        <Span Text="Need and account?"
+                              TextColor="White" />
+                        <Span Text=" "
+                              TextColor="White" />
+                        <Span Text="Sign up"
+                              TextColor="#1EC9B2"
+                              TextDecorations="Underline" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
-            <Grid >
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Frame Grid.Column="0" 
+                <Frame Grid.Column="0"
                        BackgroundColor="#3B5998"
                        CornerRadius="7">
-                    <Image Source="facebook.png" 
-                           VerticalOptions="Center"
-                           HeightRequest="20"/>
+                    <Image HeightRequest="20"
+                           Source="facebook.png"
+                           VerticalOptions="Center" />
                 </Frame>
-                <Frame Grid.Column="1" 
+                <Frame Grid.Column="1"
                        BackgroundColor="White"
                        CornerRadius="7">
-                    <Image Source="google.png" 
-                           VerticalOptions="Center"
-                           HeightRequest="20"/>
+                    <Image HeightRequest="20"
+                           Source="google.png"
+                           VerticalOptions="Center" />
                 </Frame>
             </Grid>
         </StackLayout>

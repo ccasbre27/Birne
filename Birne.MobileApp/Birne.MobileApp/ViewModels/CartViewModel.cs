@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using Birne.Core.Models;
+using Prism.Navigation;
 
 namespace Birne.MobileApp.ViewModels
 {
@@ -13,7 +14,7 @@ namespace Birne.MobileApp.ViewModels
             set => RaiseAndSetIfChanged(ref _products, value);
         }
 
-        public CartViewModel()
+        public CartViewModel(INavigationService navigationService) : base(navigationService)
         {
             Products = new ObservableCollection<Product>();
             Products.Add(new Product());

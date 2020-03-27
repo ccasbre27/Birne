@@ -2,6 +2,7 @@
 using System.Linq;
 using Birne.Core.Models;
 using Prism.Commands;
+using Prism.Navigation;
 
 namespace Birne.MobileApp.ViewModels
 {
@@ -16,7 +17,7 @@ namespace Birne.MobileApp.ViewModels
 
         public DelegateCommand<CategoryModel> SelectedCategoryCommand { get; private set; }
 
-        public HomeTabViewModel()
+        public HomeTabViewModel(INavigationService navigationService) : base(navigationService)
         {
             Categories = new ObservableCollection<CategoryModel>()
             {

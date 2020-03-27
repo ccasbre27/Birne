@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace Birne.MobileApp.Droid
 {
-    [Activity(Label = "Sin Intermediarios", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Sin Intermediarios", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IMessageSender
     {
         private readonly int VOICE = 10;

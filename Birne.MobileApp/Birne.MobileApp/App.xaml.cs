@@ -1,6 +1,9 @@
-﻿using Birne.MobileApp.View;
-using Birne.MobileApp.ViewModel;
+﻿using System;
+using System.Reflection;
+using Birne.MobileApp.Views;
+using Birne.MobileApp.ViewModels;
 using Prism.Ioc;
+using Prism.Mvvm;
 using Prism.Unity;
 using Xamarin.Forms;
 
@@ -16,8 +19,7 @@ namespace Birne.MobileApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
-           // NavigationService.NavigateAsync($"NavigationPage/CartPage");
+            NavigationService.NavigateAsync($"HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -26,9 +28,21 @@ namespace Birne.MobileApp
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
             containerRegistry.RegisterForNavigation<RegisterUserPage, RegisterUserViewModel>();
-            containerRegistry.RegisterForNavigation<HomeTabPage, HomeTabViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartViewModel>();
             containerRegistry.RegisterForNavigation<MainPage>();
+        }
+
+        protected override void ConfigureViewModelLocator()
+        {
+            base.ConfigureViewModelLocator();
+
+            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver((viewType) =>
+            {
+                var viewName = viewType.FullName.Replace(".Views.", ".ViewModels.").Replace("Page", "");
+                var viewAssemblyName = viewType.GetTypeInfo().Assembly.FullName;
+                var viewModelName = $"{viewName}ViewModel, {viewAssemblyName}";
+                return Type.GetType(viewModelName);
+            });
         }
     }
 }

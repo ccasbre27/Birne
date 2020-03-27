@@ -1,8 +1,7 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Birne.MobileApp.ViewModel
+namespace Birne.MobileApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
@@ -24,11 +23,11 @@ namespace Birne.MobileApp.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        
+
 
         public BaseViewModel()
         {
         }
     }
- 
+
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace Birne.Core
+namespace Birne.Core.Models
 {
     public class Order : BaseModel
     {
@@ -21,7 +21,7 @@ namespace Birne.Core
             set => RaiseAndSetIfChanged(ref user_id, value);
         }
 
-       public string order_status
+        public string order_status
         {
             get => status;
             set => RaiseAndSetIfChanged(ref status, value);

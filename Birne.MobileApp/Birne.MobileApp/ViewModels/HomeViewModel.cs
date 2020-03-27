@@ -1,4 +1,4 @@
-﻿namespace Birne.MobileApp.ViewModel
+﻿namespace Birne.MobileApp.ViewModels
 {
     public class HomeViewModel
     {

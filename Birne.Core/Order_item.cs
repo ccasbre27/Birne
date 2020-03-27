@@ -1,6 +1,7 @@
 using System;
 
-namespace Birne.Core{
+namespace Birne.Core.Models
+{
     public class OrderItem : BaseModel
     {
         private int id;

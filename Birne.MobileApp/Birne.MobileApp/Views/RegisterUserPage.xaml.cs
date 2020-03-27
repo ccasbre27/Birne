@@ -1,7 +1,7 @@
 ﻿
 using Xamarin.Forms;
 
-namespace Birne.MobileApp.View
+namespace Birne.MobileApp.Views
 {
     public partial class RegisterUserPage : ContentPage
     {

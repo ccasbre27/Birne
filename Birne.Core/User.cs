@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Birne.Core
+namespace Birne.Core.Models
 {
     public class User : BaseModel
     {

@@ -1,24 +1,29 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using Birne.MobileApp.Model;
+using Birne.Core.Models;
 using Prism.Commands;
 
-namespace Birne.MobileApp.ViewModel
+namespace Birne.MobileApp.ViewModels
 {
     public class HomeTabViewModel : BaseViewModel
     {
-        public ObservableCollection<CategoryModel> Categories => new ObservableCollection<CategoryModel>()
+        private ObservableCollection<CategoryModel> _categories;
+        public ObservableCollection<CategoryModel> Categories
         {
-            new CategoryModel() { Name = "BASADO EN TUS GASTOS", IsActive=true},
-            new CategoryModel() { Name = "LIMPIEZA"},
-            new CategoryModel() { Name = "FRUTAS Y VERDURAS"}
-        };
+            get => _categories;
+            set => RaiseAndSetIfChanged(ref _categories, value);
+        }
 
         public DelegateCommand<CategoryModel> SelectedCategoryCommand { get; private set; }
 
         public HomeTabViewModel()
         {
+            Categories = new ObservableCollection<CategoryModel>()
+            {
+                new CategoryModel() { Name = "BASADO EN TUS GUSTOS", IsActive=true},
+                new CategoryModel() { Name = "LIMPIEZA"},
+                new CategoryModel() { Name = "FRUTAS Y VERDURAS"}
+            };
             SelectedCategoryCommand = new DelegateCommand<CategoryModel>(SelectedCategory);
         }
 

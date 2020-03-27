@@ -6,7 +6,7 @@ using Android.Graphics.Drawables;
 using Android.Util;
 using AndroidX.Core.Content;
 using Birne.MobileApp.Droid.Controls;
-using Birne.MobileApp.View;
+using Birne.MobileApp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 

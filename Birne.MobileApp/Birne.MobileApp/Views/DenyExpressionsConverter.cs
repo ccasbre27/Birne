@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace Birne.MobileApp.View
+namespace Birne.MobileApp.Views
 {
     public class DenyExpressionsConverter : IValueConverter
     {

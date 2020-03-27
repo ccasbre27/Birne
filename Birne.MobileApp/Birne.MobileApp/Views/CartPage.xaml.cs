@@ -2,14 +2,15 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Birne.MobileApp.View
+namespace Birne.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : MasterDetailPage
+    public partial class CartPage : ContentPage
     {
-        public HomePage()
+        public CartPage()
         {
             InitializeComponent();
+
         }
     }
 }

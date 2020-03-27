@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using Birne.Core;
+using Birne.Core.Models;
 
-namespace Birne.MobileApp.ViewModel
+namespace Birne.MobileApp.ViewModels
 {
     public class CartViewModel : BaseViewModel
     {

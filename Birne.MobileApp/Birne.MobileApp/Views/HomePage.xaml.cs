@@ -2,14 +2,12 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Birne.MobileApp.View
+namespace Birne.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePageMaster : ContentPage
+    public partial class HomePage : MasterDetailPage
     {
-        public ListView ListView;
-
-        public HomePageMaster()
+        public HomePage()
         {
             InitializeComponent();
         }

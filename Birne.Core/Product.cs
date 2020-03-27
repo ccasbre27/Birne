@@ -1,7 +1,9 @@
 using System;
 
-namespace Birne.Core{
-    public class Product : BaseModel{
+namespace Birne.Core.Models
+{
+    public class Product : BaseModel
+    {
         public int id;
         public string name;
         public string merchant_id;
@@ -9,7 +11,7 @@ namespace Birne.Core{
         public string status; //in or out of stock
         public string img_url;
 
-       public int product_id
+        public int product_id
         {
             get => id;
             set => RaiseAndSetIfChanged(ref id, value);
@@ -42,7 +44,7 @@ namespace Birne.Core{
         {
             get => img_url;
             set => RaiseAndSetIfChanged(ref img_url, value);
-        }        
+        }
 
     }
 }

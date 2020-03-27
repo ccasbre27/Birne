@@ -1,8 +1,9 @@
 using System;
 
-namespace Birne.Core
+namespace Birne.Core.Models
 {
-    public class Merchant : BaseModel{
+    public class Merchant : BaseModel
+    {
         private string id;
         private string name;
         private string last_name;

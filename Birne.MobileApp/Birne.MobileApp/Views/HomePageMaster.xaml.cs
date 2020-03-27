@@ -2,12 +2,14 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Birne.MobileApp.View
+namespace Birne.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePageDetail : TabbedPage
+    public partial class HomePageMaster : ContentPage
     {
-        public HomePageDetail()
+        public ListView ListView;
+
+        public HomePageMaster()
         {
             InitializeComponent();
         }

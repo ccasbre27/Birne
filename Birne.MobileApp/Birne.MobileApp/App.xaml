@@ -5,7 +5,7 @@
                         xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
-                        xmlns:view="clr-namespace:Birne.MobileApp.View"
+                        xmlns:view="clr-namespace:Birne.MobileApp.Views"
                         mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>

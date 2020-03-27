@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage x:Class="Birne.MobileApp.View.HomeTabPage"
+<ContentPage x:Class="Birne.MobileApp.Views.HomeTabPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             xmlns:view="clr-namespace:Birne.MobileApp.View"
+             xmlns:view="clr-namespace:Birne.MobileApp.Views"
              x:Name="HomeTabledPage"
              prism:ViewModelLocator.AutowireViewModel="True"
              ControlTemplate="{StaticResource ctm-base}">
@@ -24,7 +24,8 @@
 
             <CollectionView HeightRequest="30"
                             ItemsLayout="HorizontalList"
-                            ItemsSource="{Binding Categories}">
+                            ItemsSource="{Binding Categories}"
+                            SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -34,7 +35,7 @@
                                    Text="{Binding Name}" />
 
                             <Label Margin="0,0,25,0"
-                                   IsVisible="{Binding IsActive, Converter={StaticResource cnvDenyExpressionsConverter}}"
+                                   IsVisible="{Binding IsActive, Mode=OneWay, Converter={StaticResource cnvDenyExpressionsConverter}}"
                                    Style="{StaticResource sty-sutitle}"
                                    Text="{Binding Name}"
                                    TextColor="#D8D8D8">
@@ -45,7 +46,7 @@
                             </Label>
                             <BoxView HeightRequest="2"
                                      HorizontalOptions="Start"
-                                     IsVisible="{Binding IsActive}"
+                                     IsVisible="{Binding IsActive, Mode=OneWay}"
                                      WidthRequest="15"
                                      Color="{StaticResource MainColor}" />
                         </StackLayout>

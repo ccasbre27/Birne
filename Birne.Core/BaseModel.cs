@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Birne.Core
+namespace Birne.Core.Models
 {
     public class BaseModel : INotifyPropertyChanged
     {

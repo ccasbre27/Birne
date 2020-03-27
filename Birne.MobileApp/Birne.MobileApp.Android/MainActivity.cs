@@ -1,19 +1,16 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
 using Android.Content;
-using Xamarin.Forms;
-using Birne.MobileApp.Core.Interface;
+using Android.Content.PM;
+using Android.OS;
+using Android.Runtime;
 using Android.Speech;
+using Birne.MobileApp.Core.Interface;
+using Xamarin.Forms;
 
 namespace Birne.MobileApp.Droid
 {
-    [Activity(Label = "Birne.MobileApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Sin Intermediarios", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IMessageSender
     {
         private readonly int VOICE = 10;
@@ -24,6 +21,7 @@ namespace Birne.MobileApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+            Forms.SetFlags("CollectionView_Experimental");
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

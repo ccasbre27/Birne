@@ -23,15 +23,21 @@
                         Android="Roboto-Regular.ttf#Roboto-Regular"
                         iOS="Roboto-Regular.ttf" />
 
-            <Style x:Key="styTitle"
+            <Style x:Key="sty-title"
                    TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource MainColor}" />
                 <Setter Property="FontFamily" Value="{d:StaticResource fnt-bold}" />
                 <Setter Property="FontSize" Value="16" />
             </Style>
 
-            <Style x:Key="styCustomEntry"
-                   TargetType="view:CustomEntry">
+            <Style x:Key="sty-sutitle"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource MainColor}" />
+                <Setter Property="FontFamily" Value="{d:StaticResource fnt-bold}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style TargetType="view:CustomEntry">
                 <Setter Property="CBackgroundColor" Value="White" />
                 <Setter Property="BorderColor" Value="#D8D8D8" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />

@@ -2,20 +2,56 @@
 <ContentPage x:Class="Birne.MobileApp.View.HomeTabPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:view="clr-namespace:Birne.MobileApp.View"
+             x:Name="HomeTabledPage"
+             prism:ViewModelLocator.AutowireViewModel="True"
              ControlTemplate="{StaticResource ctm-base}">
+    <ContentPage.Resources>
+        <view:DenyExpressionsConverter x:Key="cnvDenyExpressionsConverter" />
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="20">
             <Frame BackgroundColor="#D8D8D8"
                    CornerRadius="25"
                    HeightRequest="150" />
 
-            <Label Style="{StaticResource styTitle}"
+            <Label Style="{StaticResource sty-title}"
                    Text="Buscar tus productos" />
 
             <view:CustomEntry ImageAlignment="Right"
-                              ImageSource="search_icon.png"
-                              Style="{StaticResource styCustomEntry}" />
+                              ImageSource="search_icon.png" />
+
+            <CollectionView HeightRequest="30"
+                            ItemsLayout="HorizontalList"
+                            ItemsSource="{Binding Categories}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Margin="0,0,25,0"
+                                   IsVisible="{Binding IsActive}"
+                                   Style="{StaticResource sty-sutitle}"
+                                   Text="{Binding Name}" />
+
+                            <Label Margin="0,0,25,0"
+                                   IsVisible="{Binding IsActive, Converter={StaticResource cnvDenyExpressionsConverter}}"
+                                   Style="{StaticResource sty-sutitle}"
+                                   Text="{Binding Name}"
+                                   TextColor="#D8D8D8">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.SelectedCategoryCommand, Source={x:Reference HomeTabledPage}}"
+                                                          CommandParameter="{Binding .}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="2"
+                                     HorizontalOptions="Start"
+                                     IsVisible="{Binding IsActive}"
+                                     WidthRequest="15"
+                                     Color="{StaticResource MainColor}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -26,6 +26,7 @@ namespace Birne.MobileApp
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
             containerRegistry.RegisterForNavigation<RegisterUserPage, RegisterUserViewModel>();
+            containerRegistry.RegisterForNavigation<HomeTabPage, HomeTabViewModel>();
             containerRegistry.RegisterForNavigation<MainPage>();
         }
     }

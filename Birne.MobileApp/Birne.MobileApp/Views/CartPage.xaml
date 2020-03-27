@@ -11,13 +11,16 @@
     <ContentPage.Content>
 
         <Grid>
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="220" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="0"
-                   BackgroundColor="#2F2E41">
+            <Frame Grid.Row="0" 
+                   BackgroundColor="#2F2E41"
+                   Margin="-20,0">
                 <Label FontAttributes="Bold"
                        FontSize="Title"
                        HorizontalTextAlignment="Center"
@@ -25,55 +28,72 @@
                        TextColor="White" />
             </Frame>
 
-            <Grid Grid.Row="1"
-                  Padding="15">
+            <ListView Grid.Row="1"
+                      ItemsSource="{Binding Products}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid >
+
+                         
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Frame Grid.Column="0"
+                                           BackgroundColor="#1EC9B2"
+                                           CornerRadius="60"
+                                           VerticalOptions="Center"
+                                           HeightRequest="5">
+                                    <Label Text="200"
+                                               TextColor="White"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"/>
+                                </Frame>
+                                <Image Grid.Column="1"
+                                           HeightRequest="60"
+                                           Source="aguacate.png"
+                                           WidthRequest="60" />
+
+                                <Grid Grid.Column="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Label  Grid.Row="0" 
+                                            Text="Aguacate Hass" />
+                                    <Label  Grid.Row="1"  Text="100% Natural" />
+                                    <Label  Grid.Row="2" Text="¢3,300 (kilo)" />
+
+                                </Grid>
+                          
+
+                                <Label Grid.Column="3"
+                                           FontSize="Subtitle"
+                                           Text="¢6,600"
+                                           TextColor="#1EC9B2"
+                                           VerticalOptions="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Grid Grid.Row="2"
+                Padding="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <ListView Grid.Row="0"
-                          ItemsSource="{Binding Products}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0"
-                                           BackgroundColor="#1EC9B2"
-                                           CornerRadius="30"
-                                           VerticalOptions="Center">
-                                        <Label Text="2"
-                                               TextColor="White" />
-                                    </Frame>
-                                    <Image Grid.Column="1"
-                                           HeightRequest="60"
-                                           Source="aguacate.png"
-                                           WidthRequest="60" />
-                                    <StackLayout Grid.Column="2"
-                                                 Orientation="Vertical">
-                                        <Label Text="Aguacate Hass" />
-                                        <Label Text="100% Natural" />
-                                        <Label Text="¢3,300 (kilo)" />
-                                    </StackLayout>
-
-                                    <Label Grid.Column="3"
-                                           FontSize="Subtitle"
-                                           Text="¢6,600"
-                                           TextColor="#1EC9B2"
-                                           VerticalOptions="Center" />
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
+               
                 <Label Grid.Row="1"
                        HorizontalTextAlignment="End"
                        TextColor="#2F2E41">

@@ -1,20 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
              x:Class="Birne.MobileApp.Views.EmptyPage"
+             BackgroundColor="#03A9F4"
              BackgroundImage="bg_prototipo.png">
     <ContentPage.Content>
         <RelativeLayout>
-            <Label Text="¡Oh! Recuerda que estas viendo un prototipo. Esta seccion estara disponible pronto en nuestra solucion."
+
+            <Image Source="bg_prototipo.png"
+                RelativeLayout.WidthConstraint=
+                  "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                  "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+            <Image HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Source="sin_intermediarios.png"
+                   WidthRequest="250"
+                 
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, 
+                                                                       Constant=75}" 
+                     
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, 
+                                                                       Constant=520}"/>
+            <Label x:Name="centerLabel"
                    TextColor="Black"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center"
-                   TextAll/>
-            <Image Source= "sin_intermediarios.PNG"
-                   VerticalOptions="Center">
+                   Text="¡Oh!&#x0A;Recuerda que estás viendo un prototipo.&#x0A;Esta sección estará disponible pronto en nuestra solución."
+                   HorizontalTextAlignment="Center"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, 
+                                                                     Constant=10}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                                                     Property=Height, 
+                                                                     Factor=0.5,
+                                                                     Constant=-17}" />
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

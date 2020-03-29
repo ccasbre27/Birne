@@ -8,12 +8,28 @@
             BarBackgroundColor="{StaticResource MainColor}"
             SelectedTabColor="White">
     <NavigationPage.TitleView>
+
+        <Grid>
         <Image Margin="70,0,0,0"
                Aspect="AspectFit"
                HeightRequest="35"
                HorizontalOptions="Start"
                Source="header.png"
                VerticalOptions="CenterAndExpand" />
+
+
+        <Image Source="mic.png" 
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                HeightRequest="35"
+               Margin="7">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SpeechCommand}" NumberOfTapsRequired="1"  />
+            </Image.GestureRecognizers>
+        </Image>
+
+        </Grid>
     </NavigationPage.TitleView>
     <view:HomeTabPage IconImageSource="home.png" />
 

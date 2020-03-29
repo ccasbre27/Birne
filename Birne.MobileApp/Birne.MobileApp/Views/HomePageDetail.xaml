@@ -19,7 +19,6 @@
 
     <view:CartTabPage IconImageSource="buy.png" />
 
-    <ContentPage ControlTemplate="{StaticResource ctm-base}"
-                 IconImageSource="profile.png" />
+    <view:EmptyPage IconImageSource="profile.png" />
 
 </TabbedPage>

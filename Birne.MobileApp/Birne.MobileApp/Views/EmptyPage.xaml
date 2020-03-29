@@ -5,31 +5,21 @@
              BackgroundColor="#03A9F4"
              BackgroundImage="bg_prototipo.png">
     <ContentPage.Content>
-        <RelativeLayout>
 
-            <Image RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
-                                                                          Property=Height}"
-                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
-                                                                         Property=Width}"
-                   Source="bg_prototipo.png" />
-            <Image HorizontalOptions="Center"
-                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant,
-                                                                     Constant=75}"
-                   RelativeLayout.YConstraint="{ConstraintExpression Type=Constant,
-                                                                     Constant=520}"
-                   Source="sin_intermediarios.png"
-                   VerticalOptions="Center"
-                   WidthRequest="250" />
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
             <Label x:Name="centerLabel"
                    HorizontalTextAlignment="Center"
-                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant,
-                                                                     Constant=10}"
-                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                                                                     Property=Height,
-                                                                     Factor=0.5,
-                                                                     Constant=-17}"
+                   VerticalOptions="Center"
                    Text="¡Oh!&#x0A;Recuerda que estás viendo un prototipo.&#x0A;Esta sección estará disponible pronto en nuestra solución."
                    TextColor="Black" />
-        </RelativeLayout>
+
+
+            <Image HorizontalOptions="Center"
+                   Source="sin_intermediarios.png"
+                   VerticalOptions="End"
+                   WidthRequest="150" />
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

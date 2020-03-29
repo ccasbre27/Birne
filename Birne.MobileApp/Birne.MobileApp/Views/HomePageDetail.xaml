@@ -7,10 +7,17 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             BarBackgroundColor="{StaticResource MainColor}"
             SelectedTabColor="White">
-    
+    <NavigationPage.TitleView>
+        <Image Margin="70,0,0,0"
+               Aspect="AspectFit"
+               HeightRequest="35"
+               HorizontalOptions="Start"
+               Source="header.png"
+               VerticalOptions="CenterAndExpand" />
+    </NavigationPage.TitleView>
     <view:HomeTabPage IconImageSource="home.png" />
-    
-    <view:CartPage IconImageSource="buy.png" />
+
+    <view:CartTabPage IconImageSource="buy.png" />
 
     <ContentPage ControlTemplate="{StaticResource ctm-base}"
                  IconImageSource="profile.png" />

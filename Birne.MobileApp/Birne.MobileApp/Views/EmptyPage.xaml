@@ -1,20 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Birne.MobileApp.Views.EmptyPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Birne.MobileApp.Views.EmptyPage"
-             BackgroundImage="bg_prototipo.png">
+             BackgroundImage="bg_prototipo.png"
+             mc:Ignorable="d">
     <ContentPage.Content>
         <RelativeLayout>
-            <Label Text="¡Oh! Recuerda que estas viendo un prototipo. Esta seccion estara disponible pronto en nuestra solucion."
+            <Label HorizontalOptions="Center"
+                   Text="¡Oh! Recuerda que estas viendo un prototipo. Esta seccion estara disponible pronto en nuestra solucion."
                    TextColor="Black"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center"
-                   TextAll/>
-            <Image Source= "sin_intermediarios.PNG"
-                   VerticalOptions="Center">
+                   VerticalOptions="Center" />
+            <Image Source="sin_intermediarios.PNG"
+                   VerticalOptions="Center" />
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,5 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Birne.MobileApp.Views.HomePage" xmlns:pages="clr-namespace:Birne.MobileApp.Views">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage x:Class="Birne.MobileApp.Views.HomePage"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:pages="clr-namespace:Birne.MobileApp.Views">
     <MasterDetailPage.Master>
         <pages:HomePageMaster x:Name="MasterPage" />
     </MasterDetailPage.Master>

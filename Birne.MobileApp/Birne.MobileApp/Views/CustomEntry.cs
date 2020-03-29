@@ -13,10 +13,10 @@ namespace Birne.MobileApp.Views
             BindableProperty.Create(nameof(ImageSource), typeof(ImageSource), typeof(CustomEntry), null);
 
         public static readonly BindableProperty ImageHeightProperty =
-            BindableProperty.Create(nameof(ImageHeight), typeof(int), typeof(CustomEntry), 18);
+            BindableProperty.Create(nameof(ImageHeight), typeof(int), typeof(CustomEntry), 10);
 
         public static readonly BindableProperty ImageWidthProperty =
-            BindableProperty.Create(nameof(ImageWidth), typeof(int), typeof(CustomEntry), 18);
+            BindableProperty.Create(nameof(ImageWidth), typeof(int), typeof(CustomEntry), 10);
 
         public static readonly BindableProperty ImageAlignmentProperty =
             BindableProperty.Create(nameof(ImageAlignment), typeof(ImageAlignment), typeof(CustomEntry), ImageAlignment.Left);

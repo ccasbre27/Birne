@@ -1,0 +1,29 @@
+.Login {
+    background-color: #2F2E41;
+    min-height: 100vh;
+    padding: 5vh;
+    color: white;
+}
+
+div > label, input {
+    font-size: 2rem !important;
+}
+
+.LoginButton {
+    background-color: #1EC9B2;
+    color: white;
+    min-height: 80px !important;
+    margin: 5vh 0 5vh 0;
+}
+
+.FacebookButton {
+    background-color: #3B5998;
+    min-height: 80px !important;
+}
+
+.GoogleButton {
+    background-color:white;
+    min-height: 80px !important;
+}
+
+

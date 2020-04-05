@@ -4,11 +4,11 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Login from './components/Login';
+import App from './components/App';
 
 ReactDOM.render(
   
-    <Login />
+    <App />
   ,
   document.getElementById('root')
 );

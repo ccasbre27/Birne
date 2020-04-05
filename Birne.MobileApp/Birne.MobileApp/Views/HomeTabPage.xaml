@@ -97,6 +97,10 @@
                                 <Grid HorizontalOptions="FillAndExpand"
                                       RowSpacing="0"
                                       VerticalOptions="FillAndExpand">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference HomeTabledPage}, Path=BindingContext.SelectedProductCommand}"
+                                                              CommandParameter="{Binding .}" />
+                                    </Grid.GestureRecognizers>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="Auto" />

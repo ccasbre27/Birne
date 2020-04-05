@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Birne.Core.Models;
+using Birne.MobileApp.Views;
 using Bogus;
 using Prism.Commands;
 using Prism.Navigation;
@@ -9,6 +11,7 @@ namespace Birne.MobileApp.ViewModels
 {
     public class HomeTabViewModel : BaseViewModel
     {
+        #region Properties
         private ObservableCollection<CategoryModel> _categories;
         public ObservableCollection<CategoryModel> Categories
         {
@@ -22,10 +25,29 @@ namespace Birne.MobileApp.ViewModels
             get => _products;
             set => RaiseAndSetIfChanged(ref _products, value);
         }
+        #endregion
 
+        #region Commands
         public DelegateCommand<CategoryModel> SelectedCategoryCommand { get; private set; }
 
+        public DelegateCommand<ProductModel> SelectedProductCommand { get; private set; }
+        #endregion
+
+        #region Private Methods
         public HomeTabViewModel(INavigationService navigationService) : base(navigationService)
+        {
+            SelectedCategoryCommand = new DelegateCommand<CategoryModel>(SelectedCategory);
+            SelectedProductCommand = new DelegateCommand<ProductModel>(SelectedProduct);
+
+            InitializeClass();
+        }
+
+        private void SelectedProduct(ProductModel productModel)
+        {
+            NavigationService.NavigateAsync(nameof(ProductDetailPage));
+        }
+
+        private void InitializeClass()
         {
             Categories = new ObservableCollection<CategoryModel>()
             {
@@ -45,8 +67,6 @@ namespace Birne.MobileApp.ViewModels
                 .RuleFor(u => u.ImageURL, f => f.Image.PicsumUrl());
 
             Products = new ObservableCollection<ProductModel>(productFake.Generate(7));
-
-            SelectedCategoryCommand = new DelegateCommand<CategoryModel>(SelectedCategory);
         }
 
         private void SelectedCategory(CategoryModel category)
@@ -60,5 +80,6 @@ namespace Birne.MobileApp.ViewModels
 
             category.IsActive = true;
         }
+        #endregion
     }
 }

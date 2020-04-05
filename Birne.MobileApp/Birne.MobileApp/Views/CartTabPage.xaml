@@ -5,6 +5,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             x:Name="CartTab"
              prism:ViewModelLocator.AutowireViewModel="True"
              ControlTemplate="{StaticResource ctm-base}"
              mc:Ignorable="d">
@@ -36,7 +37,6 @@
                         <ViewCell>
                             <Grid HorizontalOptions="FillAndExpand"
                                   VerticalOptions="FillAndExpand">
-
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />

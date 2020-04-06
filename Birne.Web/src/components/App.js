@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import faker from 'faker';
 import Login from './Login';
-import ProductList from './ProductsList';
+import Home from './Home';
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ class App extends Component {
             id: faker.random.uuid(), 
             description: faker.commerce.productAdjective(),
             name: faker.commerce.productName(),
-            image: faker.image.food()
+            image: faker.image.cats()
         }
     }
       
@@ -31,7 +31,7 @@ class App extends Component {
         if(!this.state.isLogged) {
             return <Login onLogin={ this.onLogin } />
         } else {
-            return <ProductList products={ this.createProducts(10) }/>;
+            return <Home products={ this.createProducts(20) }/>;
         }
     
     }

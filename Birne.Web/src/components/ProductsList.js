@@ -3,7 +3,7 @@ import faker from 'faker';
 
 import Product from './Product';
 
-import {Container, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 const ProductList = ({ products }) => {
 
@@ -15,11 +15,10 @@ const ProductList = ({ products }) => {
     });
 
     return(
-        <Container>
+        
             <Row>
                 { allProducts }
             </Row>
-        </Container>
     );
 
 }

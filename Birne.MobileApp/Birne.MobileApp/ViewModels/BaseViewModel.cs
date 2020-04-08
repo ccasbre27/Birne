@@ -4,7 +4,7 @@ using Prism.Navigation;
 
 namespace Birne.MobileApp.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged, INavigationAware
     {
         private bool _isBusy;
         public bool IsBusy
@@ -34,6 +34,8 @@ namespace Birne.MobileApp.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public abstract void OnNavigatedFrom(INavigationParameters parameters);
+        public abstract void OnNavigatedTo(INavigationParameters parameters);
 
         public BaseViewModel(INavigationService navigationService)
         {

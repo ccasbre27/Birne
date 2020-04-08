@@ -13,6 +13,14 @@ namespace Birne.MobileApp.ViewModels
             LoginCommand = new DelegateCommand(Login);
         }
 
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
+
         private void Login()
         {
             NavigationService.NavigateAsync("/HomePage");

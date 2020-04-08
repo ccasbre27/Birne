@@ -5,6 +5,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:view="clr-namespace:Birne.MobileApp.Views"
              x:Name="HomeTabledPage"
+             Padding="20,20,20,0"
              prism:ViewModelLocator.AutowireViewModel="True"
              ControlTemplate="{StaticResource ctm-base}">
     <ContentPage.Resources>

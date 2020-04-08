@@ -30,7 +30,7 @@ namespace Birne.MobileApp
             containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
             containerRegistry.RegisterForNavigation<RegisterUserPage, RegisterUserViewModel>();
             containerRegistry.RegisterForNavigation<CartTabPage, CartViewModel>();
-            containerRegistry.RegisterForNavigation<ProductDetailPage>();
+            containerRegistry.RegisterForNavigation<ProductDetailPage, ProductDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<MainPage>();
         }
 

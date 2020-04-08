@@ -24,8 +24,14 @@ namespace Birne.MobileApp.ViewModels
             {
                 //recon.Text = ex.Message;
             }
+        }
 
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
 
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
         }
 
         public void StartSpeechRecognition()
@@ -44,8 +50,5 @@ namespace Birne.MobileApp.ViewModels
                 //start.IsEnabled = false;
             }
         }
-
-
-
     }
 }

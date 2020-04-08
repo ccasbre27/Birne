@@ -24,5 +24,13 @@ namespace Birne.MobileApp.ViewModels
             Products.Add(new ProductModel());
             Products.Add(new ProductModel());
         }
+
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
     }
 }

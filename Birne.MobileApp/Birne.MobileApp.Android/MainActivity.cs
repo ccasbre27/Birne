@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Speech;
 using Birne.MobileApp.Core.Interface;
+using FFImageLoading.Forms.Platform;
 using Xamarin.Forms;
 
 namespace Birne.MobileApp.Droid
@@ -22,6 +23,7 @@ namespace Birne.MobileApp.Droid
 
             base.OnCreate(savedInstanceState);
             Forms.SetFlags("CollectionView_Experimental");
+            CachedImageRenderer.Init(false);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

@@ -23,6 +23,13 @@
                         Android="Roboto-Regular.ttf#Roboto-Regular"
                         iOS="Roboto-Regular.ttf" />
 
+            <Style x:Key="sty-large"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource MainColor}" />
+                <Setter Property="FontFamily" Value="{d:StaticResource fnt-bold}" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+
             <Style x:Key="sty-title"
                    TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource MainColor}" />
@@ -59,10 +66,15 @@
             </Style>
 
             <ControlTemplate x:Key="ctm-base">
-                <ScrollView>
-                    <ContentPresenter Padding="20"
-                                      BackgroundColor="White" />
-                </ScrollView>
+                <Grid HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                    <ScrollView HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                        <ContentPresenter BackgroundColor="White"
+                                          HorizontalOptions="FillAndExpand"
+                                          VerticalOptions="FillAndExpand" />
+                    </ScrollView>
+                </Grid>
             </ControlTemplate>
         </ResourceDictionary>
     </Application.Resources>

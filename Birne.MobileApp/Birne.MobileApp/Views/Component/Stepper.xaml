@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="Birne.MobileApp.Views.Stepper"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="StepperView">
+    <ContentView.Content>
+        <Frame Padding="0"
+               BackgroundColor="#1EC9B2"
+               CornerRadius="25"
+               HorizontalOptions="CenterAndExpand">
+            <Grid Padding="5"
+                  ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       HeightRequest="30"
+                       Source="minus.png"
+                       WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DownTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label Grid.Column="1"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource sty-large}"
+                       Text="{Binding Value, Source={x:Reference StepperView}}"
+                       TextColor="White"
+                       WidthRequest="50" />
+
+                <Image Grid.Column="2"
+                       HeightRequest="30"
+                       Source="plus.png"
+                       WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UpTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

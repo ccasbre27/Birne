@@ -8,5 +8,13 @@ namespace Birne.MobileApp.ViewModels
         public RegisterUserViewModel(INavigationService navigationService) : base(navigationService)
         {
         }
+
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
     }
 }

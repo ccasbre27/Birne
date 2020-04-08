@@ -42,9 +42,20 @@ namespace Birne.MobileApp.ViewModels
             InitializeClass();
         }
 
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
+
         private void SelectedProduct(ProductModel productModel)
         {
-            NavigationService.NavigateAsync(nameof(ProductDetailPage));
+            NavigationParameters navParameters = new NavigationParameters();
+            navParameters.Add(nameof(ProductModel), productModel);
+
+            NavigationService.NavigateAsync(nameof(ProductDetailPage), navParameters);
         }
 
         private void InitializeClass()
